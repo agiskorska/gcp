@@ -7,7 +7,7 @@ def get_results():
 @app.route('/save', methods=['POST'])
 def add_change():
     content = request.json
-    print(content)
+    print(content['ref'])
     ref = content['ref']
     if not ref:
         return jsonify({"error": "Missing required fields"}), 400
