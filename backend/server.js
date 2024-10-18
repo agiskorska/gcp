@@ -21,10 +21,8 @@ app.post("/save", (req, res) => {
       dbContent = JSON.parse(fileData);
     }
 
-    // Add new data to the content
     dbContent.push(data);
 
-    // Write the updated content back to db.json
     fs.writeFile(dbFile, JSON.stringify(dbContent, null, 2), (err) => {
       if (err) {
         return res
