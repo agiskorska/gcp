@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-
+@app.route('/', methods=['GET'])
+def get_results():
+   return jsonify({"message":"this is loading"})
 @app.route('/save', methods=['POST'])
 def add_change():
-    # Extract data from the request
     content = request.json
     print(content)
     ref = content['ref']
